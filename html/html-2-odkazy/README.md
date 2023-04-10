@@ -1,7 +1,7 @@
 # HTML 2 - odkazy
 
 > **Note**
-> Všetky príklady k tejto lekcii sú v zložke [./priklady](`html/html-2-odkazy/priklady`).
+> Všetky príklady k tejto lekcii sú v zložke [priklady/](`html/html-2-odkazy/priklady`).
 
 HTML je HyperText Markup Language, a HyperText znamená, že HTML dokumenty
 môžue odkazovať na iné (nielen) HTML dokumenty. Hlavný mechanizmus odkazovania
