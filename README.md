@@ -18,3 +18,4 @@ uložte si `nadejni-ajtaci-main.zip` dakde do vášho počítača a rozzipujte.
     1. HTML 1 — Úplné základy
     2. [HTML 2](html/html-2-odkazy/) — Odkazy
 2. CSS
+    1. [CSS 1](css/css-1-zaklady/) — Základy
