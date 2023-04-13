@@ -173,6 +173,19 @@ p {
 </html>
 ```
 
+## Užitočné odkazy
+
+* https://en.wikipedia.org/wiki/CSS
+* https://www.w3schools.com/css/
+* https://developer.mozilla.org/en-US/docs/Learn/CSS
+
+### Po slovensky
+
+* https://www.codecademy.com/learn/learn-css
+* https://wpgeek.sk/css-pre-zaciatocnikov/
+* https://blog.sme.sk/sutiak/veda-a-technika/tvorba-web-stranok-pre-zaciatocnikov-css
+* https://www.kvizy.eu/tutorial/html/css-uvod
+
 ## Nabudúce
 
 Nabudúce sa pozrieme bližšie na rôzne typy selektorov
