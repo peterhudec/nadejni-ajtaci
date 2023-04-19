@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Základy CSS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <style>
       h1, h2, h3, h4, h5, h6 {
         color: orange;
@@ -12,20 +11,70 @@
 
       p {
         color: green;
+        /* background-color: #c22995; */
+      }
+
+      .price {
+        background-color: blueviolet;
+        padding: 3px;
+        border-radius: 3px;
+        color: yellow;
+      }
+
+      h2 .price {
+        border-radius: 6px;
+        background-color: darkgoldenrod;
+      }
+
+      h2 > .price {
+        border-radius: 6px;
+        background-color: aquamarine;
+      }
+
+      .euro {
+        border: 2px solid red;
+      }
+
+      .dolar {
+        border: 2px dotted gold;
       }
     </style>
   </head>
   <body>
     <h1>Nadpis</h1>
+    <button class="btn btn-success">
+      ja som gombik
+    </button>
+    <p>
+      Odstavec
+      cena ropy
+      <span class="price dolar">$45</span>
+      je asi velmi dobra cena
+    </p>
+    <h2>
+      Zlava dna, mlieko iba za
+      <span class="price euro">€2</span>
+    </h2>
     <p>
       Odstavec
     </p>
+    <h2>
+      Zlava dna, mlieko iba za
+      <span>
+        <span>
+          bla bla
+          <span class="price">€2</span>
+        </span>
+      </span>
+    </h2>
     <p>
       Odstavec
+      <em>zvyraznene</em>
+      bla bla
+      <strong>ja som silny</strong>
+      bla bla
     </p>
-    <h2>Nadpis</h2>
-    <p>
-      Odstavec
-    </p>
+    <h2>Ceny idu hore</h2>
+    <p>Cena chleba sa vysplhala na <span class="price">€2</span></p>
   </body>
 </html>

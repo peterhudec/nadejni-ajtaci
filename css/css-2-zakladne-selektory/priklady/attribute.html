@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Attribute selectors</title>
+    <style>
+      a {
+        padding: 4px;
+        border-radius: 4px;
+      }
+
+      li {
+        margin: 12px;
+      }
+
+      a[href$=".pdf"] {
+        background: gold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Zoznam CSS tutoriálov</h1>
+    <p>
+      Odkazy na PDF súbory sú zvýraznené žltou.
+    </p>
+    <ul>
+      <li>
+        <a href="https://web.dev/learn/css/">
+          Learn CSS
+        </a>
+      </li>
+      <li>
+        <a href="https://wtf.tw/ref/duckett.pdf">
+          HTML & CSS design and build websites
+        </a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps">
+          CSS First Steps
+        </a>
+      </li>
+      <li>
+        <a href="https://matfuvit.github.io/UVIT/predavanja/literatura/TutorialsPoint%20CSS.pdf">
+          CSS cascading style sheets
+        </a>
+      </li>
+      <li>
+        <a href="https://www.tutorialspoint.com/css/index.htm">
+          CSS Tutorial
+        </a>
+      </li>
+    </ul>
+  </body>
+</html>
