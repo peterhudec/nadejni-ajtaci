@@ -19,4 +19,5 @@ uložte si `nadejni-ajtaci-main.zip` dakde do vášho počítača a rozzipujte.
     2. [HTML 2](html/html-2-odkazy/) — Odkazy
 2. CSS
     1. [CSS 1](css/css-1-zaklady/) — Základy
-    1. [CSS 2](css/css-2-zakladne-selektory/) — Základné selektory
+    2. [CSS 2](css/css-2-zakladne-selektory/) — Základné selektory
+    2. [CSS 3](css/css-3-combinators/) — Kombinovanie selektorov

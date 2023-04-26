@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sibling combinators</title>
+    <style>
+      /*
+      General sibling combinator:
+      Selektuj všetky odstavce, ktoré sú súrodencami hr a ktoré sa nachádzajú za hr
+      */
+      hr ~ p {
+        color: red;
+      }
+
+      /*
+      Adjacent sibling combinator:
+      Selektuj odstavec, ktorý je súrodencom hr
+      a ktorý sa nachádza za bezprostredne za hr
+      */
+      hr + p {
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <body>
+      <h1>Nadpis</h1>
+      <p>ja nie som červený, lebo nie som za čiarou</p>
+      <p>ja nie som červený, lebo nie som za čiarou</p>
+      <hr/>
+      <p>
+        ja som červený, lebo som za čiarou a iba ja mám žlté pozadie,
+        lebo iba ja som bezprostredne za čiarou.
+        Ak by medzi mnou a čiarou bol nejaký iný element,
+        tak už by som nemal žlté pozadie.
+      </p>
+      <div>
+        <p>
+          ja som síce za čiarou, ale nie som súrodenec čiary,
+          lebo som v dive a tak nebudem červený
+        </p>
+      </div>
+      <p>ja som červený, lebo som za čiarou</p>
+      <h1>ja nie som červený, lebo nie som odstavec</h1>
+      <p>ja som červený, lebo som za čiarou</p>
+    </body>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Descendant combinator</title>
+    <style>
+      /*
+      Selector grouping:
+      Tento štýl sa uplatní na obidva selektory, ktoré sú tu oddelené čiarkou
+      */
+      aside, .price {
+        background: slategray;
+      }
+
+      aside {
+        color: lightgray;
+        padding: 10px;
+        border-radius: 10px;
+        float: right;
+        width: 30%;
+      }
+
+      .price {
+        padding: 0 4px;
+        border-radius: 4px;
+        color: white;
+      }
+
+      /*
+      Descendant combinator:
+      Selektuje všetky elementy s triedou price, ktoré sa nachádzajú
+      kdekoľvek vnútri elementu typu aside.
+      */
+      aside .price {
+        color: slategray;
+        background: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <article>
+      <h1>Nadpis</h1>
+      <aside>
+        <h2>
+          Chleba vraj bude stáť <span class="price">€20</span>
+        </h2>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+        Chleba je drahý, stojí až <span class="price">€20</span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </aside>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+        <span class="price">€20</span>
+        Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+        est laborum.
+      </p>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+        <span class="price">€20</span>
+        Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+        est laborum.
+      </p>
+    </article>
+  </body>
+</html>
