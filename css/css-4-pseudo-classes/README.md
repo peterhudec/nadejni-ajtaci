@@ -30,8 +30,6 @@ a:active, button:active {
 a:visited {
   color: red;
 }
-
-button
 ```
 
 ```html
