@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo triedy</title>
+  <style>
+    div {
+      margin-bottom: 10px;
+    }
+
+    input {
+      background: orange;
+      appearance: none;
+      border: none;
+      height: 20px;
+    }
+
+    input:is([type=checkbox], [type=radio]) {
+      width: 20px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    input[type=radio] {
+      border-radius: 10px;
+    }
+
+    input:checked {
+      background: green;
+    }
+
+    input:placeholder-shown {
+      background: green;
+    }
+
+    input:invalid {
+      background: red;
+    }
+
+    input:disabled {
+      background: lightgrey;
+    }
+
+    li:first-child {
+      border: 2px dashed black;
+    }
+
+    li:last-child {
+      border: 2px dotted black;
+    }
+
+    /* Toto nieje pseudo class, ale pseudo element */
+    input:not(:disabled)::placeholder {
+      color: lightgreen;
+    }
+
+    li:nth-child(even) {
+      color: green;
+    }
+
+    li:nth-child(odd) {
+      color: red;
+    }
+
+    li:nth-child(3n) {
+      background: yellow;
+    }
+
+    table {
+      border: 1px solid;
+    }
+
+    td {
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    tr:nth-child(odd) {
+      background: lightgray;
+    }
+
+    /* Zatiaľ nefunguje, i*/
+    td:nth-child(even) {
+      color: green;
+    }
+
+    td:nth-child(odd) {
+      color: red;
+    }
+
+    a {
+      font-size: 30px;
+      padding: 5px;
+      color: darkslateblue;
+      transition: all;
+      transition-duration: 1000ms;
+    }
+
+    a:hover {
+      background: lightpink;
+    }
+
+    a:active {
+      background: lightcoral;
+      transition-duration: 0ms;
+    }
+
+    a:visited {
+      color: darkviolet;
+    }
+
+    button {
+      appearance: none;
+      background: orange;
+    }
+
+    button:not(:disabled):hover {
+      background: green;
+    }
+
+    button:not(:disabled):active {
+      background: red;
+    }
+
+    button:disabled {
+      filter: brightness(150%);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Pseudo triedy</h1>
+  <h2>:hover :active :visited :disabled</h2>
+  <div>
+    <a href="#foo">Foo</a>
+    <a href="#bar">Bar</a>
+    <a href="#baz">Baz</a>
+  </div>
+  <button>Ja som gombík</button>
+  <button disabled>Ja som gombík ktorý je znefunkčnený</button>
+
+  <h2>:checked :invalid :disabled :placeholder-shown </h2>
+  <div>
+    <label>
+      <input type="checkbox" />
+      zašktrni ma
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="radio" name="pismenko" />
+      A
+    </label>
+    <label>
+      <input type="radio" name="pismenko" />
+      B
+    </label>
+    <label>
+      <input type="radio" name="pismenko" />
+      C
+    </label>
+  </div>
+  <div>
+    <label>
+      Vyplň ma
+      <input type="text" placeholder="dačo sem napíš" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Zadaj email
+      <input type="email" placeholder="príklad@príklad.sk" />
+    </label>
+  </div>
+  <div>
+    <label>
+      Tu nič nezadáš
+      <input disabled placeholder="skús tu niečo napísať" />
+    </label>
+  </div>
+
+  <h2>:first-child :last-child :nth-child</h2>
+  <ul>
+    <li>položka</li>
+    <li>položka</li>
+    <li>položka</li>
+    <li>položka</li>
+    <li>položka</li>
+    <li>položka</li>
+    <li>položka</li>
+    <li>položka</li>
+    <li>položka</li>
+  </ul>
+
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+  </table>
+</body>
+
+</html>

@@ -20,4 +20,6 @@ uložte si `nadejni-ajtaci-main.zip` dakde do vášho počítača a rozzipujte.
 2. CSS
     1. [CSS 1](css/css-1-zaklady/) — Základy
     2. [CSS 2](css/css-2-zakladne-selektory/) — Základné selektory
-    2. [CSS 3](css/css-3-combinators/) — Kombinovanie selektorov
+    3. [CSS 3](css/css-3-combinators/) — Kombinovanie selektorov
+    4. [CSS 4](css/css-4-pseudo-classes/) — Pseudo triedy
+
