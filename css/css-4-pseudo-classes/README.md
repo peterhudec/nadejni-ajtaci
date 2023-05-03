@@ -177,7 +177,7 @@ button:not(:disabled):hover {
 ## :is()
 
 Pomocou pseudo triedy `:is(selektor-a, selektor-b, selektor-c)` môžme selektovať
-jeden z viacerych selektorov. Do ľudskej reči by sme to mohli preložiť ako _alebo_:
+jeden z viaceryých selektorov. Do ľudskej reči by sme to mohli preložiť ako _alebo_:
 selektuj `selektor-a` alebo `selektor-b` alebo `selektor-c`.
 
 ```css
