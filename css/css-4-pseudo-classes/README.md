@@ -151,7 +151,7 @@ input:placeholder-shown {
 
 ## :not()
 
-Pomocou pseudo triedy `:is(selektor)` môžme selektovať všetko čo *nespĺňa*
+Pomocou pseudo triedy `:not(selektor)` môžme selektovať všetko čo **nespĺňa**
 nejakú podmienku:
 
 ```css
