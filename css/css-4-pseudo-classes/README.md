@@ -85,7 +85,7 @@ vo formulároch.
 
 * `:checked` selektuje `<input type="checkbox"/>` a `<input type="radio"/>`
   ak sú zaškrtnuté
-* `:checked` selektuje `<input/>` ak hodnota do ňho napísaná nie je platná,
+* `:invalid` selektuje `<input/>` ak hodnota do ňho napísaná nie je platná,
   napríklad ak napíšeme "bla bla" do elementu `<input type="email"/>`
 * `:placeholder-shown` selektuje `<input placeholder="sem niečo napíš"/>`
   ak do tohto elementu ešte nikto nič nenapísal
