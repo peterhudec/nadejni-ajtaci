@@ -192,6 +192,15 @@ input[type=checkbox], input[type=radio] {
   vertical-align: middle;
   display: inline-block;
 }
+
+/* Zjednodušený príklad o gombíkoch a odkazoch */
+:hover:is(button, a) {
+  color: orange;
+}
+
+:active:is(button, a) {
+  color: green;
+}
 ```
 
 ## Užitočné odkazy
