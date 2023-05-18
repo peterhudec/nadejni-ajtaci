@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>::placeholder</title>
+    <style>
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 400px;
+      }
+
+      ::placeholder {
+        background: lightgray;
+      }
+
+      input::placeholder {
+        color: green;
+      }
+
+      textarea::placeholder {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input placeholder="Niečo sem napíš"/>
+      <textarea placeholder="Niečo sem napíš"></textarea>
+      <input/>
+    </div>
+  </body>
+</html>

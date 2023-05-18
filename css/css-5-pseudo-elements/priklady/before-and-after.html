@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>::before a ::after</title>
+    <style>
+      body {
+        font-size: 20px;
+        color: grey;
+      }
+      
+      q {
+        color: black;
+      }
+
+      .uvodzovky-1 q::before {
+        color: red;
+      }
+
+      .uvodzovky-1 q::after {
+        color: green;
+      }
+      
+      .uvodzovky-2 q::before {
+        content: '❝';
+      }
+
+      .uvodzovky-2 q::after {
+        content: '❞';
+      }
+      
+      .uvodzovky-3 q::before {
+        content: 'začiatok citátu';
+        margin-right: 4px;
+        color: brown;
+        background: gold;
+      }
+
+      .uvodzovky-3 q::after {
+        content: 'koniec citátu';
+        margin-left: 4px;
+        color: brown;
+        background: gold;
+      }
+
+      a[target=_blank]::after {
+        content: url('https://img.icons8.com/material-outlined/16/external-link.svg');
+        vertical-align: middle;
+        margin-left: 2px;
+      }
+
+      a[href^="http:"]::before {
+        content: '⚠️';
+      }
+
+      ul > :first-child {
+        background: lightcoral;
+      }
+
+      ul > :last-child {
+        background: lightgreen;
+      }
+
+      ul::before {
+        content: 'Ja som bol pridaný na začiatok'
+      }
+
+      ul::after {
+        content: 'Ja som bol pridaný na koniec'
+      }
+
+    </style>
+  </head>
+  <body>
+    <p>
+      Jožko povedal
+      <q>ic do rici!</q>.
+      A ja som mu povedal že
+      <q>ty ic do rici!</q>.
+    </p>
+    <p class="uvodzovky-1">
+      Jožko povedal
+      <q>ic do rici!</q>.
+      A ja som mu povedal že
+      <q>ty ic do rici!</q>.
+    </p>
+    <p class="uvodzovky-2">
+      Jožko povedal
+      <q>ic do rici!</q>.
+      A ja som mu povedal že
+      <q>ty ic do rici!</q>.
+    </p>
+    <p class="uvodzovky-3">
+      Jožko povedal
+      <q>ic do rici!</q>.
+      A ja som mu povedal že
+      <q>ty ic do rici!</q>.
+    </p>
+    <hr/>
+    <ul>
+      <li>
+        <a href="http://example.com" target="_blank" >example.com</a>
+      </li>
+      <li>
+        <a href="https://example.com" target="_blank" >example.com</a>
+      </li>
+      <li>
+        <a href="https//example.com">example.com</a>
+      </li>
+      <li>
+        <a href="http://example.com">example.com</a>
+      </li>
+    </ul>
+  </body>
+</html>
