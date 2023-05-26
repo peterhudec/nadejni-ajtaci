@@ -242,8 +242,9 @@ nie tie čo nám od výroby ponúka prehliadač?
 <article>
   <h1>Môj prvý článok</h1>
   <p>
-    Ako zvykne hovoriť strýko Palo
-    <q>po jedle prichádza smútok</q>
+    Sokrates povedal
+    <q>Viem, že nič neviem</q>
+    a potom sa strhla bitka.
   </p>
 <article>
 ```

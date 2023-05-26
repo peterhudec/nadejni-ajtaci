@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Môj prvý článok na mojom blogu</title>
+  <style>
+    article {
+      width: 300px;
+      margin: auto;
+    }
+
+    /* Veľké písmeno na začiatku každého odstavca */
+    p::first-letter {
+      float: left;
+      margin-right: 30px;
+      font-size: 100px;
+    }
+
+    /* Vlastný dizajn odrážok zoznamu */
+    ul ::marker {
+      content: '💩';
+    }
+
+    ol ::marker {
+      color: brown;
+    }
+
+    /* Vlastný dizajn placeholdra */
+    textarea::placeholder {
+      color: orange;
+    }
+
+    /* Frajerský dizajn označeného textu */
+    ::selection {
+      color: gold;
+      background: brown;
+    }
+
+    /* Komentáre majú svoj vlastný dizaj selekcie textu */
+    .komentare ::selection {
+      color: brown;
+      background: gold;
+    }
+
+    /* Toto pridá ikonu šípky na koniec každého odkazu, ktorý sa otvára na novej karte */
+    a[target="_blank"]::after {
+      /* Ikona */
+      content: '➽';
+      /* Ikonu natočíme o 45 stupňov proti smeru hodinových ručičiek... */
+      transform: rotate(-45deg);
+      /* ...a trochu ju odsadíme od textu odkazu... */
+      margin-left: 2px;
+      /* ...ale aby sme to mohli urobiť, ikona musí byť zobrazená ako blok  */
+      display: inline-block;
+    }
+
+    /* Toto pridá obdĺžnik s nadpisom pdf pred každý odkaz ktorý odkazuje na PDF súbor */
+    a[href$=".pdf"]::before {
+      content: 'pdf';
+      display: inline-block;
+      border: 1px solid;
+      color: crimson;
+      background: pink;
+      padding: 2px;
+      margin-right: 2px;
+      text-decoration: none;
+    }
+
+    /* Týmto zmeníme znaky pre otváraciu a zatváraciu úvodzovku elementov <q> */
+    q::before {
+      color: green;
+      content: '👉';
+    }
+
+    q::after {
+      color: red;
+      content: '👈'
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <h1>Môj prvý článok</h1>
+    <p>
+      Toto je odpoveď na
+      <a href="http://iny-blog.sk/clanok-co-ma-nasral" target="_blank">jeden
+        článok na jednom inom blogu</a>,
+      ktorý ma riadne nasral.
+      Ak to nasralo aj vás, tak to
+      <a href="#komentare">napíšte do komentára</a>.
+      Aby ste si nemysleli, že len kritizujem tak
+      <a href="http://studnica-mudrosti.sk/bla-bla.pdf" target="_blank">tento
+        článok</a>
+      ma zas celkom pobavil. Píše sa tam, že
+      <q>bla bla bla bla</q>.
+    </p>
+    <article>
+      <h2>Komentáre</h2>
+      <ul class="komentare">
+        <li>Super článok</li>
+        <li>Chujovina</li>
+        <li>Sám by som to lepšie nenapísal</li>
+      </ul>
+      <form>
+        <label>
+          Tvoj komentár
+          <textarea placeholder="Sem napíš čo si myslíš"></textarea>
+        </label>
+        <br />
+        <button type="submit">Pridaj komentár</button>
+      </form>
+    </article>
+</body>
+
+</html>

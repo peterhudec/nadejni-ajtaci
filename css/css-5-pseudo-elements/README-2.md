@@ -15,13 +15,6 @@ ktoré sme nevytvorili my v našom HTML, ale vytvoril ich prehliadač.
 
 Pseudo elementy na rozdiel od pseudo tried začínajú dvoma dvojbodkami `::`.
 
-* `::first-line` Selektuje prvý riadok textu v odstavci
-* `::first-letter` Selektuje prvé písmeno v odstavci
-* `::marker` Selektuje odrážku v položke zoznamu
-* `::placeholder` Selektuje _placeholder_ `<input>` elementov
-* `::selection` Selektuje označený text
-::before ::after
-
 ## `::first-line` a `::first-letter`
 
 Pseudo element `::first-line` selektuje prvý riadok textu v odstavci a
