@@ -63,7 +63,7 @@ h1 {
 }
 ```
 
-Potom ešte existujú `vmin` a `vmax`. `vmin` je menší z rozmerov `vh` a `vm`,
+Potom ešte existujú `vmin` a `vmax`. `vmin` je menší z rozmerov `vh` a `vw`,
 `vmax` je väčší z nich. Napríklad ak si pozeráme stránku na počítači, tak je
 pravdepodobné, že šírka okna bude väčšia ako výška a vtedy bude `vmin` to isté
 ako `vh` a `vmax` bude to isté ako `vw`:
@@ -88,8 +88,8 @@ tak bude `vmin` to isté ako `vw` a `vmax` to isté ako `vh`:
 |                | |
 |                | |
 |                | |
-|    vmin = vh   | |
-|    vmax = vw   | vh
+|    vmin = vw   | |
+|    vmax = vh   | vh
 |                | |
 |                | |
 |                | |
