@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Dimensions</title>
+  <style>
+    html {
+      font-size: 40px;
+      line-height: 40px;
+    }
+
+    section {
+      background: rgb(228, 228, 228);
+      width: 600px;
+      margin: auto;
+      font-size: 15px;
+      line-height: 15px;
+      padding: 20px 0;
+    }
+
+    div {
+      white-space: nowrap;
+      height: 40px;
+      background: orange;
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      font-family: monospace;
+    }
+
+    h1, h2, h3 {
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h2>Absolútne jednotky</h2>
+    <div style="width: 1cm">1cm</div>
+    <div style="width: 1mm">1mm</div>
+    <div style="width: 1Q">1Q (quarter-milimeter: 1/4mm)</div>
+    <div style="width: 1in">1in (inch: 2.54cm)</div>
+    <div style="width: 1pc">1pc (picas: 1/6in)</div>
+    <div style="width: 1pt">1pt (point: 1/72in)</div>
+    <div style="width: 1px">1px (pixel: 1/96in)</div>
+    <h2>Relatívne jednotky</h2>
+    <h3>Percentá</h3>
+    <div style="width: 50%">50% (šírky rodiča)</div>
+    <div style="width: 100%">100% (šírky rodiča)</div>
+    <h3>Viewport</h3>
+    <div style="width: 50vw">50vw (50% šírky viewportu)</div>
+    <div style="width: 50vh">50vh (50% výšky viewportu)</div>
+    <div style="width: 50vmin">50vmin (50% výšky alebo šírky viewportu, podľa toho čo je menšie)</div>
+    <div style="width: 50vmax">50vmax (50% výšky alebo šírky viewportu, podľa toho čo je väčšie)</div>
+    <h3>Písmo</h3>
+    <div style="width: 1ch">1ch (šírka znaku "0" seba alebo rodiča)</div>
+    <div style="width: 1ex">1ex (výška znaku "x" seba alebo rodiča)</div>
+    <div style="width: 1em">1em (veľkosť písma seba alebo rodiča)</div>
+    <div style="width: 1rem">1rem (veľkosť písma root elementu)</div>
+    <div style="width: 1lh">1lh (veľkosť riadku seba alebo rodiča)</div>
+    <div style="width: 1rlh">1rlh (veľkosť riadku root elementu)</div>
+  </section>
+</body>
+</html>

@@ -23,3 +23,4 @@ uložte si `nadejni-ajtaci-main.zip` dakde do vášho počítača a rozzipujte.
     3. [CSS 3](css/css-3-combinators/) — Kombinovanie selektorov
     4. [CSS 4](css/css-4-pseudo-classes/) — Pseudo triedy
     5. [CSS 5](css/css-5-pseudo-elements/) — Pseudo elementy
+    6. [CSS 6](css/css-6-units-and-colors/) — Jednotky a farby
