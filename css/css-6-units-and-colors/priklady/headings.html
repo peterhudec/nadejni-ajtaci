@@ -5,6 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .a :is(h1, h2, h3, h4, h5, h6) {
+      background: orange;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .b :is(h1, h2, h3, h4, h5, h6) {
+      background: lightskyblue;
+      padding: 0.5em;
+      border-radius: 0.5em;
+    }
+  </style>
 </head>
 <body>
   <h1>Lorem ipsum dolor sit amet</h1>
@@ -13,7 +26,7 @@
   <h4>Lorem ipsum dolor sit amet</h4>
   <h5>Lorem ipsum dolor sit amet</h5>
   <h6>Lorem ipsum dolor sit amet</h1>
-  <div>
+  <div class="a">
     <h1>Lorem ipsum dolor sit amet</h1>
     <h2>Lorem ipsum dolor sit amet</h2>
     <h3>Lorem ipsum dolor sit amet</h3>
@@ -21,7 +34,7 @@
     <h5>Lorem ipsum dolor sit amet</h5>
     <h6>Lorem ipsum dolor sit amet</h1>
   </div>
-  <div>
+  <div class="b">
     <h1>Lorem ipsum dolor sit amet</h1>
     <h2>Lorem ipsum dolor sit amet</h2>
     <h3>Lorem ipsum dolor sit amet</h3>
