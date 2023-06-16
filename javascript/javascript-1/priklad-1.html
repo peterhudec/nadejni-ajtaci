@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 1</title>
+    <style>
+      .light-theme {
+        color: #101010;
+        background: lightgrey;
+      }
+
+      .dark-theme {
+        color: lightgray;
+        background: #101010;
+      }
+    </style>
+  </head>
+  <body class="dark-theme">
+    <h1>JavaScript 1</h1>
+    <!--
+    Pomocou JavaScriptu naprogramujeme tento gombík tak, že keď sa naňho klikne,
+    tak sa otvorí upozornenie s textom "Nazdar".
+    -->
+    <button id="alert-button">Stlač ma</button>
+
+    <!--
+    Tento gombík zasa naprogramujeme tak, že keď sa naňho bude klikať,
+    tak sa bude prepínať téma celej stránky z tmavej na svetlú a naopak.
+    Pomocou JavaScriptu budeme prepínať hodnotu atribútu class elementu body z
+    "dark-theme" na "light-theme" a naopak, teda budeme meniť HTML z
+    <body class="dark-theme"> na <body class="light-theme">.
+    Týmpádom sa na body a všetko čo je v ňom uplatní iný štýl, podľa toho aká
+    bude práve hodnota atribútu class.
+    -->
+    <button id="toggle-theme">Prepni tému</button>
+
+    <!-- Script element je na to aby sme do ňho písali JavaScript -->
+    <script>
+      // Toto je špeciálna direktíva, ktorá ak je tu,
+      // tak nás JavaScript upozorní na veci, ktoré vedú často k chybám
+      "use strict"
+
+      // Tu si uchopíme gombík, ktorý keď sa stlačí,
+      // tak otvorí upozornenie (alert) a uložíme si ho do premennej s názvom
+      // alertButton
+
+      // Tu vytvárame premennú s názvom alertButton a ukladáme do nej gombík
+      // ktorý sme uchopili výrazom (expression) na pravo od znamienka =
+      let alertButton = document.getElementById('alert-button')
+      // A hneď aj tú premennú použijeme na to, aby sme tomu gombíku, ktorý je
+      // v nej uložený priradili do jeho vlastnosti s názvom onclick funkciu,
+      // ktorú JavaScript spustí (zavolá) vždy keď sa klikne na ten gombík.
+      // Takýmto funkciám sa zvykne hovoriť "event handlers", alebo "callbacks".
+      alertButton.onclick = () => {
+        // To čo je medzi týmito zloženými zátvorkami sa nazýva telo funkcie a
+        // vykoná sa keď sa klikne na alertButton.
+
+        // Toto povie prehliadaču, nech otvorí také upozornenie (alert) s textom
+        // "Nazdar"
+        alert('Nazdar')
+      }
+
+      // Tu si zas vrazíme do premennej prepinacTemy iný gombík...
+      let themeSwitchButton = document.getElementById('toggle-theme')
+      // ...a takisto ako predtým mu do vlastnosti "onclick" priradíme funkciu,
+      // ktorá sa spustí keď sa na ten gombík klikne (event handler alebo callback)
+      themeSwitchButton.onclick = () => {
+        // Všetko čo je medzi týmito zloženými zátvorkami sa vykoná zakaždým,
+        // keď sa klikne na themeSwitchButton
+
+        // No a to čo chceme aby sa stalo keď sa na tento gombík klikne je,
+        // že sa zmení hodnota atribútu class elementu body na "light-theme",
+        // ak to bolo pred tým "dark-theme" a naopak.
+        // Čiže to čo sa má vykonať je podmienené tým aká je práve hodnota toho atribútu
+        // A presne na toto nám slúži takzvaný if statement:
+
+        // Výraz v guľatých zátvorkách je podmienka. Ak bude výsledok výrazu
+        // pravdivý (true), tak sa vykoná všetko to, čo je v zložených zátvorkách
+        if (document.body.className === 'dark-theme') {
+          // Toto sa vykoná iba ak má atribút class elementu body hodnotu "dark-theme"
+          // čiže <body class="dark-theme">
+
+          // V tom prípade mu zmeníme hodnotu na 'light-theme',
+          document.body.className = 'light-theme'
+          // Čiže body bude teraz vyzerať takto: <body class="dark-theme">
+
+          // Zároveň môžme zmeniť text na themeSwitchButton gomíku
+          themeSwitchButton.innerText = 'Switch to dark theme'
+          // Čiže themeSwitchButton bude teraz vyzerať takto:
+          // <button id="toggle-theme">Switch to dark theme</button>
+        } else {
+          // Všetko čo je v týchto zložených zátvorkách sa vykoná ak výsledok
+          // výrazu, ktorý je v podmienke hore medzi guľatými zátvorkami bude
+          // nepravdivý (false), čiže ak body vyzerá takto:
+          // čiže <body class="light-theme">
+
+          // A týmpádom tu v podstate musíme urobiť presný opak toho čo
+          // sme robili hore
+          document.body.className = 'dark-theme'
+          themeSwitchButton.innerText = 'Switch to light theme'
+        }
+      }
+    </script>
+  </body>
+</html>
