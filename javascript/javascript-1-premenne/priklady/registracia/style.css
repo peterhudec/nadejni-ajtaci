@@ -1,0 +1,22 @@
+form {
+  width: 400px;
+  margin: auto;
+}
+
+form, label {
+  display: flex;
+  flex-direction: column;
+}
+
+.inline-label {
+  display: block;
+}
+
+.error {
+  color: red;
+}
+
+/* input:invalid {
+  color: red;
+  outline: 2px solid red;
+} */

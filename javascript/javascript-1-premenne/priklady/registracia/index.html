@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Registrácia</title>
+  </head>
+  <body>
+    <form>
+      <h1>Registrácia</h1>
+      <label>
+        Užívateľské meno
+        <input name="username"/>
+      </label>
+      <div class="error" id="username-error"></div>
+      <label>
+        Heslo
+        <input type="password" name="password"/>
+      </label>
+      <div class="error" id="password-error"></div>
+      <label>
+        Zopakuj heslo
+        <input type="password" name="repeat-password"/>
+      </label>
+      <div class="error" id="repeat-password-error"></div>
+      <hr/>
+      <label class="inline-label">
+        <input type="checkbox" name="terms-and-conditions"/>
+        Súhlasím s podmienkami
+      </label>
+      <div class="error" id="terms-and-conditions-error"></div>
+      <button type="submit" id="submit">
+        Vytvoriť účet
+      </button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
