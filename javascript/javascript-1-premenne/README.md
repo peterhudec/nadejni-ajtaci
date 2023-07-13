@@ -1,6 +1,4 @@
-# JavaScript 2
-
-## Variables
+# JavaScript 1 — Premenné (Variables)
 
 Premenné si môžme predstavovať všelijako:
 
