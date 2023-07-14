@@ -1,39 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"/>
-    <title>Registrácia</title>
-  </head>
-  <body>
+    <title>Formular</title>
+    <style>
+        form, label {
+            display: flex;
+            flex-direction: column;
+        }
+        form {
+            width: 400px;
+            margin: auto;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
     <form>
-      <h1>Registrácia</h1>
-      <label>
-        Užívateľské meno
-        <input name="username"/>
-      </label>
-      <div class="error" id="username-error"></div>
-      <label>
-        Heslo
-        <input type="password" name="password"/>
-      </label>
-      <div class="error" id="password-error"></div>
-      <label>
-        Zopakuj heslo
-        <input type="password" name="repeat-password"/>
-      </label>
-      <div class="error" id="repeat-password-error"></div>
-      <hr/>
-      <label class="inline-label">
-        <input type="checkbox" name="terms-and-conditions"/>
-        Súhlasím s podmienkami
-      </label>
-      <div class="error" id="terms-and-conditions-error"></div>
-      <button type="submit" id="submit">
-        Vytvoriť účet
-      </button>
+        <label>
+            Uživateľské meno
+            <input type="text" name="username"/>
+        </label>
+        <div class="error" id="usernameError"></div>
+
+        <label>
+            Heslo
+            <input type="password" name="password"/>
+        </label>
+        <div class="error" id="passwordError"></div>
+
+        <label>
+            Zopakuj heslo
+            <input type="password" name="repeatPassword"/>
+        </label>
+        <div class="error" id="repeatPasswordError"></div>
+
+        <button>Zaregistruj sa!</button>
     </form>
-    <script src="script.js"></script>
-  </body>
+
+    <script>
+        'use strict'
+
+        const MIN_USERNAME_LENGTH = 4
+        const MIN_PASSWORD_LENGTH = 8
+
+        const form = document.querySelector('form')
+
+        const username = document.querySelector('[name="username"]')
+        const password = document.querySelector('[name="password"]')
+        const repeatPassword = document.querySelector('[name="repeatPassword"]')
+
+        const usernameError = document.querySelector('#usernameError')
+        const passwordError = document.querySelector('#passwordError')
+        const repeatPasswordError = document.querySelector('#repeatPasswordError')
+
+        form.onsubmit = (event) => {
+            event.preventDefault()
+
+            if (username.value.length < MIN_USERNAME_LENGTH) {
+                usernameError.innerText = `Uživateľské meno musí mať minimálne ${MIN_USERNAME_LENGTH} písmená!`
+            } else {
+                usernameError.innerText = ''
+            }
+
+            if (password.value.length < MIN_PASSWORD_LENGTH) {
+                passwordError.innerText = `Heslo musí mať minimálne ${MIN_PASSWORD_LENGTH} znakov!`
+            } else {
+                passwordError.innerText = ''
+            }
+
+            if (password.value !== repeatPassword.value) {
+                repeatPasswordError.innerText = `Heslá sa musia zhodovať!`
+            } else {
+                repeatPasswordError.innerText = ''
+            }
+
+            if (!(usernameError.innerText || passwordError.innerText || repeatPasswordError.innerText)) {
+                alert('Registrujem!')
+            }
+        }
+    </script>
+</body>
 </html>
