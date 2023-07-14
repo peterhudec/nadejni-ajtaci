@@ -26,4 +26,5 @@ uložte si `nadejni-ajtaci-main.zip` dakde do vášho počítača a rozzipujte.
     6. [CSS 6](css/css-6-units-and-colors/) — Jednotky a farby
 3. JavaScript
     1. [JavaScript 1](javascript/javascript-1-premenne/) - Premenné
+    1. [JavaScript 2](javascript/javascript-2-podmienky) - Podmienky
 
