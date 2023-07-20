@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formular</title>
+    <style>
+        form, label {
+            display: flex;
+            flex-direction: column;
+        }
+        form {
+            width: 400px;
+            margin: auto;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label>
+            Uživateľské meno
+            <input type="text" name="username"/>
+        </label>
+        <div class="error" id="usernameError"></div>
+
+        <label>
+            Heslo
+            <input type="password" name="password"/>
+        </label>
+        <div class="error" id="passwordError"></div>
+
+        <label>
+            Zopakuj heslo
+            <input type="password" name="repeatPassword"/>
+        </label>
+        <div class="error" id="repeatPasswordError"></div>
+
+        <button>Zaregistruj sa!</button>
+    </form>
+
+    <script>
+        'use strict'
+
+        const MIN_USERNAME_LENGTH = 4
+        const MIN_PASSWORD_LENGTH = 8
+
+        const form = document.querySelector('form')
+
+        const username = document.querySelector('[name="username"]')
+        const password = document.querySelector('[name="password"]')
+        const repeatPassword = document.querySelector('[name="repeatPassword"]')
+
+        const usernameError = document.querySelector('#usernameError')
+        const passwordError = document.querySelector('#passwordError')
+        const repeatPasswordError = document.querySelector('#repeatPasswordError')
+
+        // Event listener
+        username.onblur = () => {
+            // Input ak je menej ako MIN_USERNAME_LENGTH tak je to true
+            if (username.value.length < MIN_USERNAME_LENGTH) {
+                usernameError.innerText = `Uživateľské meno musí mať minimálne ${MIN_USERNAME_LENGTH} písmená!`
+            } else {
+                usernameError.innerText = ''
+            }
+        }
+
+        username.onkeyup = () => {
+            usernameError.innerText = ''
+        }
+
+        password.onblur = () => {
+            if (password.value.length < MIN_PASSWORD_LENGTH) {
+                passwordError.innerText = `Heslo musí mať minimálne ${MIN_PASSWORD_LENGTH} znakov!`
+            } else {
+                passwordError.innerText = ''
+            }
+        }
+
+        password.onkeyup = () => {
+            passwordError.innerText = ''
+        }
+
+        repeatPassword.onblur = () => {
+            if (password.value !== repeatPassword.value) {
+                repeatPasswordError.innerText = `Heslá sa musia zhodovať!`
+            } else {
+                repeatPasswordError.innerText = ''
+            }
+        }
+
+        repeatPassword.onkeyup = () => {
+            repeatPasswordError.innerText = ''
+        }
+
+        // Event listener
+        form.onsubmit = (event) => {
+            event.preventDefault()
+
+            if (username.value.length < MIN_USERNAME_LENGTH) {
+                usernameError.innerText = `Uživateľské meno musí mať minimálne ${MIN_USERNAME_LENGTH} písmená!`
+            } else {
+                usernameError.innerText = ''
+            }
+
+            if (password.value.length < MIN_PASSWORD_LENGTH) {
+                passwordError.innerText = `Heslo musí mať minimálne ${MIN_PASSWORD_LENGTH} znakov!`
+            } else {
+                passwordError.innerText = ''
+            }
+
+            if (password.value !== repeatPassword.value) {
+                repeatPasswordError.innerText = `Heslá sa musia zhodovať!`
+            } else {
+                repeatPasswordError.innerText = ''
+            }
+
+            if (!(usernameError.innerText || passwordError.innerText || repeatPasswordError.innerText)) {
+                alert('Registrujem!')
+            }
+        }
+    </script>
+</body>
+</html>
