@@ -31,7 +31,7 @@ if (x === 3) {
   alert('x je presne 3')
 } else if (x > y) {
   alert('x je väčšie ako y')
-} else if (y < x) {
+} else if (x < y) {
   alert('x je menšie ako y')
 } else {
   alert('x sa rovná y')
