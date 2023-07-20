@@ -341,3 +341,23 @@ if (nejakyText.length !== 0) {}
 // ...stačí použiť
 if (nejakyText) {}
 ```
+
+## Zahniezdené (nested) podmienky
+
+Do bloku kódu za podmienkou medzi zloženými zátvorkami môžeme dať akýkoľvek kód,
+teda aj ďalší `if` statement. Takéto zahniezdené bloky `if` statementov sú však
+často na úkor čitateľnosti a väčšinou dajú sa zapísať jednoduchšie pomocou
+logického operátora `&&` (and).
+
+```js
+if (x > 100) {
+  if (x < 1000) {
+    alert('x nie je ani príliš malé, ani príliš veľké')
+  }
+}
+
+// Tento if je equivalentný zahniezdeným ifom hore
+if (x > 100 && x < 1000) {
+  alert('x nie je ani príliš malé, ani príliš veľké')
+}
+```
