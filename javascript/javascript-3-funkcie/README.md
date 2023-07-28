@@ -127,7 +127,7 @@ function () {
 Ak chceme takúto funkciu zavolať, tak ju musíme uložiť do niečoho, čo sa dá
 uchopiť, čiže napríklad do nejakej premennej.
 
-Aj keď definícia funkcie má veľmi podobný syntax ako if statement, na rozdiel
+Aj keď definícia funkcie má veľmi podobný syntax ako `if`` statement, na rozdiel
 od neho je to výraz (expression) a nie vyjadrenie (statement).
 Čiže výraz definície funkcie môžme použiť všade tam, kde sa očakáva nejaká
 hodnota. Teda napríklad na pravo od `=` keď priraďujeme nejakú hodnotu do premennej.
@@ -174,7 +174,7 @@ a teda ich musíme vždy priradiť do nejakej premennej.
 
 V šípkovom syntaxe sa definícia funkcie začína guľatými zátvorkami `()`,
 za ktorými nasleduje šípka `=>`, za ktorou nasleduje blok kódu v zložených
-zátvorkách `{}`, podobne ako v if statemente. A Rovnako ako v if statemente,
+zátvorkách `{}`, podobne ako v `if`` statemente. A Rovnako ako v `if`` statemente,
 ak v bloku kódu máme iba jeden výraz, tak môžme zložené zátvorky vynechať.
 
 ```js
@@ -404,6 +404,33 @@ kolkoSaZmesti(2, 3, 4) // Objem hranola s hranamy 2, 3 a 4 je 24
 kolkoSaZmesti(2, 3, 4, 5) // Objem 4-rozmerného hranola s rozmermy 2,3,4,5 je 120
 ```
 
+Ak používame šípkový syntax a funkcia má presne jeden argument, tak môžme guľaté
+zátvorky vynechať a kód bude trochu čistejší.
+
+```js
+// Funkcia má presne jeden argument tak guľaté zátvorky okolo neho môžme odstrániť
+const pozdrav = (meno) => {
+  console.log(`Nazdar ${meno}`)
+}
+
+// V tomto prípade rozdiel v čitateľnosti nie je až taký veľký...
+const pozdrav = meno => {
+  console.log(`Nazdar ${meno}`)
+}
+
+// ...ale pomôže to čitateľnosti hlavne pri malých anonymných funkciách,
+// ktoré používame ako event listenery...
+input.addEventListener(event => alert(event.target.value))
+
+// ...alebo callbacky
+[2, 5, 4, 3].map(x => x + 100)
+
+fetch('https://v2.jokeapi.dev/joke/Any?type=single')
+  .then(response => response.json())
+  .then(data => alert(data.joke))
+```
+
+
 ## Funkcie vedia aj vyprodukovať hodnotu
 
 Definícia funkcie je výraz, ktorý môžme použiť kdekoľvek sa očakáva nejaká hodnota.
@@ -453,10 +480,25 @@ f() // výsledkom tohto výrazu bude hodnota 123
 ```
 
 Tento fakt sa často využíva v kombinácií s `if` statementmy na takzvané
-skratovanie (short circuiting) funkcie.
+skratovanie (short circuiting) funkcie, ktoré môžme použiť namiesto `if else`.
 
 ```js
-// ...ešte som nevymyslel príklad
+const mozemSiNiecoDovolitKupit = (mojeUspory, cena) => {
+  if (mojeUspory > cena) {
+    // Ak JavaScript príde to tejto vetvy programu, tak tu sa vykonávanie
+    // funkcie skončí ani nič čo nasleduje sa nevykoná
+    return 'Môžeš si to kúpiť a ešte ti dačo zostane'
+  }
+
+  if (mojeUspory < cena) {
+    // To isté tu. Ak JavaScript príde až sem, tak tu funkcia skončí
+    return "Smola, na toto nemáš dosť lóve"
+  }
+
+  // Ak sa JavaScript dostal až sem, tak to znamená,
+  // že ani jedna z podmienok v predošlých if statementoch sa nenaplnila
+  return 'Môžeš si to kúpiť, ale už ti nič nezostane'
+}
 ```
 
 Ak používame šípkový syntax bez zložených zátvoriek, tak funkcia vždy vráti
@@ -467,7 +509,89 @@ const f = () => 123
 
 f() // 123
 
+
 const g = (x, y) => x + y
 
 g(2, 5) // 7
 ```
+
+Ak ale ponecháme zložené zátvorky, tak musíme vždy použiť kľúčové slovo `return`
+ak chceme aby funkcia vrátila nejakú hodnotu, aj keď má iba jeden výraz
+Toto je častým zdrojom chýb.
+
+```js
+const h = (x, y) => {
+  // Ups, táto funkcia vráti undefined,
+  // lebo jej telo je zabalené v zložených zátvorkách a nepoužili sme return
+  x + y
+}
+
+h(3, 5) // undefined
+
+
+const hh = (x, y) => {
+  // Môžme to napraviť buď pridaním kľúčového slova return...
+  return x + y
+}
+
+hh(3, 5) // 8
+
+
+// ...alebo ešte lepšie, odstránením zložených zátvoriek
+const hhh = (x, y) => x + y
+
+hhh(3, 5) // 8
+```
+
+## Funkcie ako mlynčeky na mäso
+
+V matematike majú funkcie trochu iný význam ako v programovaní. V (imperatívnom)
+programovaní si môžme predstaviť ako krabičky v ktorých sú uložené nejaké inštrukcie,
+ktoré môžme spustiť keď potrebujeme.
+
+V matematike funkcie transformujú dáta. Môžme si ich predstaviť tiež ako krabičky
+ktoré majú vstup (argumenty) a výstup (vrátenú hodnotu). Keď do tej krabičky
+niečo vložíme, tak ona nám niečo vypľuje. Často sa používa prirovnanie k
+mlynčeku na mäso (alebo na hocijakú inú surovinu). Dnu dáme mäso a von nám víde
+pomleté mäso. V matematike funkcie nemajú žiadne vedľajšie efetky, teda jediné
+čo robia je že vypľujú (vrátia) nejakú hodnotu ktorá závisí iba na tom čo sa do
+funkcie vložilo cez jej argumenty. Takýmto funkciám hovoríme _čisté_ funkcie,
+alebo _referenčne transparentné_ funkcie.
+
+Tento spôsob uvažovania o funkciách nám pomôže, ak máme problém pochopiť koncept,
+že funkcia niečo vráti.
+
+```js
+//                      👇 Toto vojde dnu...
+function mlyncekNaMaso (maso) {
+  //     👇 ...a tu to výde von transformované
+  return `pomleté ${maso}`
+}
+
+mlyncekNaMaso('bravčové') // 'pomleté bravčové'
+mlyncekNaMaso('hovädzie') // 'pomleté hovädzie'
+
+// JavaScript obsahuje veľa čistých funkcií,
+// ktoré len vracajú transformované hodnoty, ktoré do nich vložíme
+
+// Keď do funkcie Boolean dáme hocijakú hodnotu, vráti nám ju premenenú na true, alebo false
+Boolean(123) // true
+Boolean(0) // false
+
+// Keď do funkcie Math.sin dáme nejaké číslo (uhol), vráti nám sínus toho uhla
+Math.sin(0) // 0
+Math.sin(4) // -0.7568024953079282
+Math.sin(Math.PI / 2) // 1
+
+// Keď do funkcie Math.round dáme nejaké číslo, vráti nám ho zaokrúhlené
+Math.round(4.5) // 5
+Math.round(3.14) // 3
+```
+
+## Užitočné odkazy
+
+* https://www.w3schools.com/js/js_functions.asp
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+* https://www.freecodecamp.org/news/understanding-functions-in-javascript/
+* https://www.programiz.com/javascript/function
+* https://javascript.info/function-basics
